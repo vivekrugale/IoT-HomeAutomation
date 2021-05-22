@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "816051997598",
+    "project_id": "ia-cp-homeautomation-8f88b",
+    "storage_bucket": "ia-cp-homeautomation-8f88b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816051997598:android:5b50f66f837646ccf6648f",
+        "android_client_info": {
+          "package_name": "com.example.iotcp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "816051997598-0tip2gpk4ufmsr87td952ia72ujpo41c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8BfBvGTYAgJNPE7DcCTydX8HPGtahYOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "816051997598-0tip2gpk4ufmsr87td952ia72ujpo41c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

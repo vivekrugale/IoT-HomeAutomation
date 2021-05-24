@@ -16,7 +16,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
     TextView textViewTemp, textViewHumidity, textViewLR, textViewLRFanStatus, textViewGas, textViewKitchenAlarm, textViewKitchen;
-    Button btnLRON, btnLROFF, btnKitchenON, btnKitchenOFF;
+    TextView textViewGarden, textViewAQI, textViewLEDstate;
+    Button btnLRON, btnLROFF, btnKitchenON, btnKitchenOFF, btnMQon, btnMQoff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
         textViewKitchenAlarm = findViewById(R.id.textViewKitchenAlarm);
         btnKitchenON = findViewById(R.id.btnKitchenON);
         btnKitchenOFF = findViewById(R.id.btnKitchenOFF);
+
+        textViewGarden = findViewById(R.id.textViewMQ2);
+        textViewAQI = findViewById(R.id.textViewMQ4);
+        textViewLEDstate = findViewById(R.id.textViewMQ6);
+        btnMQon = findViewById(R.id.btnMQ1);
+        btnMQoff = findViewById(R.id.btnMQ2);
 
         //*********************************************Living Room************************************************
         btnLRON.setOnClickListener(new View.OnClickListener() {
@@ -150,5 +157,61 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //*********************************************Kitchen************************************************
+
+        //*********************************************Garden************************************************
+        btnMQon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("MQ135");
+
+                myRef.child("LED").setValue("1");
+            }
+        });
+
+        btnMQoff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("MQ135");
+
+                myRef.child("LED").setValue("0");
+            }
+        });
+
+        DatabaseReference GardenRef = database.getReference("MQ135");
+
+        GardenRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String AQI = snapshot.child("Air Quality").getValue().toString();
+                String LED = snapshot.child("LED").getValue().toString();
+
+                textViewAQI.setText(AQI);
+
+                if (Float.parseFloat(AQI) > 100.0){
+                    textViewGarden.setText("Exceeded");
+                }
+                else {
+                    textViewGarden.setText("Normal");
+                }
+
+                if (LED.equals("1")){
+                    textViewLEDstate.setText("ON");
+                }
+                else {
+                    textViewLEDstate.setText("OFF");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        //*********************************************Garden************************************************
     }
 }

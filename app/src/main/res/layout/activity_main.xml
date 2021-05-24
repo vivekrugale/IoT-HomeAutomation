@@ -29,27 +29,28 @@
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="wrap_content"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView"
             android:layout_marginTop="30dp"
             android:background="#ECC34A"
-            android:text="Living Room"
+            android:text=" Living Room"
             android:textColor="#656060"
             android:textSize="24sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textViewLR"
-            android:layout_width="wrap_content"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:layout_below="@+id/textView"
+            android:layout_marginTop="30dp"
             android:layout_toRightOf="@+id/textView6"
             android:background="#B3EAAF"
             android:text=" Normal"
+            android:textAlignment="center"
             android:textColor="#393737"
-            android:textSize="24sp"/>
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView2"
@@ -148,27 +149,27 @@
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="wrap_content"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:background="#ECC34A"
-            android:text="Kitchen"
-            android:textSize="24sp"
-            android:textStyle="bold"
             android:layout_below="@+id/textView4"
-            android:layout_marginTop="60dp"/>
+            android:layout_marginTop="60dp"
+            android:background="#ECC34A"
+            android:text=" Kitchen"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textViewKitchen"
-            android:layout_width="wrap_content"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/textView4"
+            android:layout_marginTop="60dp"
+            android:layout_toRightOf="@+id/textView5"
             android:background="#B3EAAF"
             android:text="Normal"
-            android:textColor="#393737"
-            android:textSize="24sp"
-            android:layout_below="@+id/textView4"
             android:textAlignment="center"
-            android:layout_marginTop="60dp"
-            android:layout_toRightOf="@+id/textView5"/>
+            android:textColor="#393737"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView8"
@@ -245,26 +246,27 @@
 
         <TextView
             android:id="@+id/textViewMQ1"
-            android:layout_width="wrap_content"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:background="#ECC34A"
-            android:text="Garden"
-            android:textSize="24sp"
-            android:textStyle="bold"
             android:layout_below="@+id/textView10"
-            android:layout_marginTop="60dp"/>
+            android:layout_marginTop="60dp"
+            android:background="#ECC34A"
+            android:text=" Garden"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textViewMQ2"
-            android:layout_width="wrap_content"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
-            android:background="#B3EAAF"
-            android:text="Normal"
-            android:textColor="#393737"
-            android:textSize="24sp"
             android:layout_below="@+id/textView10"
             android:layout_marginTop="60dp"
-            android:layout_toRightOf="@+id/textViewMQ1"/>
+            android:layout_toRightOf="@+id/textViewMQ1"
+            android:background="#B3EAAF"
+            android:text="Normal"
+            android:textAlignment="center"
+            android:textColor="#393737"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textViewMQ3"

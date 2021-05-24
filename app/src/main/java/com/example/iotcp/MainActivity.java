@@ -135,11 +135,16 @@ public class MainActivity extends AppCompatActivity {
 
                 textViewGas.setText(gas);
 
-                if (Float.parseFloat(Alarm) > 200.0){
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("MQ3");
+
+                if (Float.parseFloat(gas) > 200.0){
                     textViewKitchen.setText("Exceeded");
+                    myRef.child("Alarm").setValue("1");
                 }
                 else {
                     textViewLR.setText("Normal");
+                    myRef.child("Alarm").setValue("0");
                 }
 
                 if (Alarm.equals("1")){
@@ -190,12 +195,16 @@ public class MainActivity extends AppCompatActivity {
                 String LED = snapshot.child("LED").getValue().toString();
 
                 textViewAQI.setText(AQI);
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("MQ135");
 
                 if (Float.parseFloat(AQI) > 100.0){
                     textViewGarden.setText("Exceeded");
+                    myRef.child("LED").setValue("1");
                 }
                 else {
                     textViewGarden.setText("Normal");
+                    myRef.child("LED").setValue("0");
                 }
 
                 if (LED.equals("1")){
